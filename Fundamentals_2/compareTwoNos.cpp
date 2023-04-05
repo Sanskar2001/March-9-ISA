@@ -30,9 +30,6 @@ int main()
 	else
 	cout<<"Both the nos are equal";
 
+	// else if ladder	
 	
-	
-	
-	
-
 }

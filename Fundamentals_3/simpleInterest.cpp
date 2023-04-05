@@ -8,7 +8,6 @@ int main()
 
 	int si=(p*r*t)/100;
 
-
 	cout<<si;
 
 	return 0;

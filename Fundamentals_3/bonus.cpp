@@ -31,10 +31,9 @@ int main()
 
 	else
 	{
-		// int extraHrs=workingHrs-40;
-		// int bonus=extraHrs*10;
-
-		int bonus=(workingHrs-40)*10;
+		int extraHrs=workingHrs-40;
+		int bonus=extraHrs*10;
+		// int bonus=(workingHrs-40)*10;
 		cout<<"Bonus="<<bonus<<endl;
 	}
 

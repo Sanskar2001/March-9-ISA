@@ -5,8 +5,6 @@ int main()
 
 	// Accept a no from user
 	// Print which day of week it is
-
-
 	int dayNo;
 
 	cin>>dayNo;
