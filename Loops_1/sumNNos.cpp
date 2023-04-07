@@ -13,15 +13,15 @@ int main()
 
 
 	int sum=0;
-	// for(int i=0;i<n;i++)
-	// {
-	// 	int no;
-	// 	cin>>no;
+	for(int i=0;i<n;i++)
+	{
+		int no;
+		cin>>no;
 
-	// 	sum+=no;
+		sum+=no;
 
-	// }
-	// cout<<"sum="<<sum<<endl;
+	}
+	cout<<"sum="<<sum<<endl;
 
 	return 0;
 
