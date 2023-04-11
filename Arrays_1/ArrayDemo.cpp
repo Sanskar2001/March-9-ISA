@@ -19,6 +19,9 @@ int main()
 	int a[]={1,2,56};
 
 
+	int n=sizeof(a)/sizeof(a[0]);
+
+
 	// Array can hold multiple homogenous value
 
 
@@ -26,7 +29,7 @@ int main()
 
 	// arrayName[indexNumber]  { indices-> 0 to n-1 }
 
-	cout<<myArray[0]<<endl<<myArray[1]<<endl<<myArray[2]<<endl<<myArray[3]<<endl;
+	// cout<<myArray[0]<<endl<<myArray[1]<<endl<<myArray[2]<<endl<<myArray[3]<<endl;
 
 	// IF Size is large
 
@@ -36,7 +39,7 @@ int main()
 
 	// Iterating an Array
 	for(int i=0;i<4;i++)
-	cout<<myArray[i]<<endl;
+	cout<<myArray[i]<<" ";
 
 
 
