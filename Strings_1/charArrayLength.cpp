@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 int main()
 {
 	char str[50];
@@ -21,6 +20,10 @@ int main()
 	}	
 
 	cout<<"Length of the char array is="<<i;
+
+	// strlen is a inbuilt function to calculate length of
+	// char array 
+	cout<<"\nLength="<<strlen(str);
 
 
 
