@@ -26,7 +26,7 @@ int main()
 		arr[pos]=tmp;
 	}
 
-	cout<<i;
+	
 
 	cout<<endl;
 

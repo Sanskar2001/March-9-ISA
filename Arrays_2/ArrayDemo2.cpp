@@ -21,4 +21,6 @@ int main()
 	for(int i=0;i<n;i++)
 	cout<<arr[i]<<" ";
 	
+
+	// Accept an array from the user and tell the maximum element;
 }

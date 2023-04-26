@@ -28,7 +28,6 @@ int main()
 		else if(arr[mid]<target)
 			s=mid+1;
 
-
 	}
 
 

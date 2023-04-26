@@ -14,7 +14,7 @@ int main()
 		char currentCharArray[100];
 		cin.getline(currentCharArray,100,'.');
 
-		int length=strlen(currentCharArray);
+		int lengthc=strlen(currentCharArray);
 
 	
 
