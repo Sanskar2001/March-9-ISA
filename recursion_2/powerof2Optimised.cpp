@@ -3,8 +3,13 @@ using namespace std;
 
 int powerof2(int n)
 {
+	if(n==0)
+	return 1;
+
 	if(n==1)
 		return 2;
+
+
 	
 
 	int halfPower=powerof2(n/2);
@@ -19,7 +24,7 @@ int powerof2(int n)
 
 int main()
 {
-	int n=8;
+	int n=1;
 	cout<<powerof2(n);
 
 }
