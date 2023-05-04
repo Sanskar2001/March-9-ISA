@@ -9,6 +9,7 @@ bool isSorted(int* arr,int currIdx,int n)
 	if(arr[currIdx]>arr[currIdx+1])
 		return false;
 
+	currIdx=0
 	return isSorted(arr,currIdx+1,n);
 }
 int main()
