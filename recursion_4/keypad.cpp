@@ -10,7 +10,7 @@ void printCombinations(string str,int pos,string ans)
 
 	int currDigit=str[pos]-'0';
 
-	"23"
+	// "23"
 	// keypad[currDigit]-->string
 
 	// 2->"abc"
@@ -25,6 +25,7 @@ void printCombinations(string str,int pos,string ans)
 	{
 		char currentChar=keypad[currDigit][i];
 		printCombinations(str,pos+1,ans+currentChar);
+		
 	}
 
 }
