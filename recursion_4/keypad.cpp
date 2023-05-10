@@ -8,6 +8,12 @@ string keypad[10]={" ","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
 void printCombinations(string str,int pos,string ans)
 {
 
+	if(pos==str.length())
+	{
+		cout<<ans<<endl;
+		return;
+	}
+
 	int currDigit=str[pos]-'0';
 
 	// "23"
@@ -21,11 +27,13 @@ void printCombinations(string str,int pos,string ans)
 	// "abc"
 	//  012
 
-	for(int i=0;i<keypad[currDigit];i++)
+
+
+	for(int i=0;i<keypad[currDigit].length();i++)
 	{
 		char currentChar=keypad[currDigit][i];
 		printCombinations(str,pos+1,ans+currentChar);
-		
+
 	}
 
 }
@@ -36,5 +44,5 @@ int main()
 	string str="23";
 
 	//					0  1    2     3    4      5     6     7      8      9
-	printCombinations(str,0,"",keypad);
+	printCombinations(str,0,"");
 }
