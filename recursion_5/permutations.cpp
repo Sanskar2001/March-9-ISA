@@ -26,6 +26,11 @@ void permutation(char str[],int pos)
 		str[i]=tmp;
 
 		permutation(str,pos+1);
+
+		// Backtracking
+		 tmp=str[pos];
+		str[pos]=str[i];
+		str[i]=tmp;
 	}
 
 }
