@@ -3,6 +3,7 @@ using namespace std;
 int cnt=0;
 void countPaths(int maze[][4],int n,int rowNo,int colNo)
 {
+
 	if(rowNo>=n || colNo>=n)
 		return;
 
@@ -14,13 +15,18 @@ void countPaths(int maze[][4],int n,int rowNo,int colNo)
 		cnt++;
 		return;
 	}
+	countPaths(maze,n,rowNo+1,colNo);
+	countPaths(maze,n,rowNo,colNo+1);
+
+
 }
 int main()
 {
 
+
 	int maze[][4]={{1,1,1,1},
 				   {1,0,0,1},
-				   {1,0,0,1},
+				   {1,1,0,1},
 				   {1,1,1,1}};	
 
 	int n=4;
