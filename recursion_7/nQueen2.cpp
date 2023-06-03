@@ -97,13 +97,10 @@ bool nQueens(int board[][4],int currRow,int n)
 			if(canPlaceRemaningQueens)
 			return true;
 
-
 			board[currRow][i]=0;
 
 		}
 		
-
-
 	}
 
 	return false;

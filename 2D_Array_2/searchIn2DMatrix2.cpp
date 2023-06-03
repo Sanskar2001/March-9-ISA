@@ -3,7 +3,7 @@ using namespace std;
 // n-> no of rows m->no of cols
 bool search(int arr[][4],int n,int m,int target)
 {
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < n; i++)
 	{
 		if(target>=arr[i][0] && target<=arr[i][n-1])
 		{

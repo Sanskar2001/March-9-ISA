@@ -7,7 +7,7 @@ int powerof2(int n)
 	return 1;
 
 	if(n==1)
-		return 2;
+	return 2;
 
 
 	

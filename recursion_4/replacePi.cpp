@@ -29,6 +29,8 @@ int main()
 	string str="abpcpidepif";
 	// abpc3.14de3.14f
 
+	// abpc3.14de3.14f
+
 	replaceWithPi(str,0,"");
 
 
