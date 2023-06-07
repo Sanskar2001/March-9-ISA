@@ -55,15 +55,79 @@ void display(Node* head)
 	cout<<"NULL";
 }
 
+int lengthOfLL(Node* head)
+{
+	int cnt=0;
+
+
+
+
+	return cnt;
+}
+
+
+/*
+
+If we do not maintain a tail pointer 
+Then to insert a new node at tail position
+We need to first go till the tail node and
+then insert my new node.
+
+This will take O(n)
+void insertionAtTail(Node* &head,int data)
+{
+
+	if(head==NULL)
+	{
+		Node* newNode=new Node(data);
+		head=newNode;
+		return;
+	}
+
+	else
+	{
+		Node* currNode=head;
+
+		while(currNode->next!=NULL)
+		{
+			currNode=currNode->next;
+		}
+		currNode->next=new Node(data);
+
+
+		// O(n)
+
+	}
+
+}
+
+*/
+
+
+// Optimise Insertion At Tail O(1)
+// If we maintain head and tail pointers both
+// Then we can simply insert a new node at Tail in O(1)
 void insertionAtTail(Node* &head,Node* &tail,int data)
 {
 
-	// Case 1 LL is empty => (head==null)
+	if(head==NULL)
+	{
+		Node* newNode=new Node(data);
+		head=newNode;
+		tail=newNode;
+		return;
+	}
 
 
-	// Case 2 LL is non empty
-
+	else
+	{
+		Node* newNode=new Node(data);
+		tail->next=newNode;
+		tail=newNode;
+	}
 }
+
+
 
 int main()
 {
@@ -75,10 +139,15 @@ int main()
 	Node* head=NULL;
 	Node* tail=NULL;
 
-	insertionAtHead(head,tail,10); //10->NULL
-	insertionAtHead(head,tail,20); // 20->10->NULL
-	insertionAtHead(head,tail,30); // 30->20->10->NULL
-	insertionAtHead(head,tail,40); // 40->30->20->10->NULL
+	// insertionAtHead(head,tail,10); //10->NULL
+	// insertionAtHead(head,tail,20); // 20->10->NULL
+	// insertionAtHead(head,tail,30); // 30->20->10->NULL
+	// insertionAtHead(head,tail,40); // 40->30->20->10->NULL
+
+
+	insertionAtTail(head,tail,10); //10->NULL
+	insertionAtTail(head,tail,20); // 10->20->NULL
+	insertionAtTail(head,tail,30); // 10->20->30->NULL
 
 	display(head);
 
