@@ -204,17 +204,29 @@ void deleteAtTail(Node* &head,Node* &tail)
 	// LL is empty
 	if(head==NULL)
 	{
-
+		cout<<"Linked List is empty can't delete";
+		return;
 	}
 	// If a single node is there in LL
 	else if(head->next==NULL)
 	{
+		delete head;
+		head=NULL;
+		tail=NULL;
 
 	}
 	// Otherwise if there are many nodes in LL
 	else
 	{
-			
+		Node* curr=head;
+		while(curr->next!=tail)
+		{
+			curr=curr->next;
+		}
+
+		curr->next=NULL;
+		delete tail;
+		tail=curr;
 	}
 }
 
@@ -253,7 +265,11 @@ int main()
 	deleteAtHead(head,tail);
 	cout<<"\n";
 	display(head);
-	
+
+
+	deleteAtTail(head,tail);
+	cout<<"\n";
+	display(head);
 
 
 	
