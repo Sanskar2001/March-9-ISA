@@ -55,6 +55,16 @@ void display(Node* head)
 	cout<<"NULL";
 }
 
+void insertionAtTail(Node* &head,Node* &tail,int data)
+{
+
+	// Case 1 LL is empty => (head==null)
+
+
+	// Case 2 LL is non empty
+
+}
+
 int main()
 {
 	// Node* head=new Node(10);
