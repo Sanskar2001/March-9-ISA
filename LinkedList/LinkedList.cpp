@@ -262,6 +262,14 @@ void deleteAtKthPosition(Node* &head,Node* &tail,int k)
 }
 
 
+int getKthNode(Node* head)
+{
+	// Take k jumps
+
+	// return the value of the kth node
+}
+
+
 int main()
 {
 	// Node* head=new Node(10);
@@ -286,7 +294,7 @@ int main()
 	// cout<<"\n";
 
 	insertionAtKthPosition(head,tail,100,1);
-	
+
 	display(head);
 	cout<<"\n";
 	deleteAtKthPosition(head,tail,2);
