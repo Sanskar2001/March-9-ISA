@@ -335,6 +335,27 @@ void reverseLLRecursive(Node* &head,Node* &tail)
 }
 
 
+Node* getKthNodeFromLast(Node head,int k)
+{
+
+	Node* slow=head;
+	Node* fast=head;
+
+
+	// Move fast exactly k steps forward
+
+
+	// Move fast and slow one-one step ahead simultaneously 
+	// till the fast reaches at NULL
+	// Whenever fast reaches at NULL 
+	// the slow will be at exactly k steps behind fast
+	// i.e. slow will be at k steps from the end
+
+	// return the slow node
+
+}
+
+
 
 int main()
 {
