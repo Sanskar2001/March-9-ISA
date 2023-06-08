@@ -294,10 +294,47 @@ void reverseLL(Node* &head,Node* &tail)
 	tail=head;
 	head=prev;
 
+}
 
+
+
+Node* reverseLLHelper(Node* head,Node* tail)
+{
+
+	if(head==NULL || head->next==NULL)
+		return head;
+
+	Node* shead=reverseLLHelper(head->next,tail);
+	Node* curr=shead;
+
+	while(curr->next!=NULL)
+	{
+		curr=curr->next;
+	}
+	curr->next=head;
+	head->next=NULL;
+
+	
+	tail=head;
+	head=shead;
+
+	return head;
 
 
 }
+
+
+
+void reverseLLRecursive(Node* &head,Node* &tail)
+{
+	 Node* newHead=reverseLLHelper(head,tail);
+
+	 tail=head;
+	 head=newHead;
+
+}
+
+
 
 int main()
 {
@@ -332,7 +369,9 @@ int main()
 
 	cout<<endl;
 
-	reverseLL(head,tail);
+	// reverseLL(head,tail);
+
+	reverseLLRecursive(head,tail);
 	display(head);
 
 	// cout<<endl<<getKthNode(head,2);
