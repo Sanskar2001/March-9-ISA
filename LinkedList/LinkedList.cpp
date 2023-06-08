@@ -230,6 +230,37 @@ void deleteAtTail(Node* &head,Node* &tail)
 	}
 }
 
+void deleteAtKthPosition(Node* &head,Node* &tail,int k)
+{
+
+		if(k==0)
+		{
+			// Delete the node at Head
+			deleteAtHead(head,tail);
+		}
+
+		else if(k>=lengthOfLL(head))
+		{
+			deleteAtTail(head,tail);
+		}
+
+		else
+		{
+			// take (k-1) jumps
+
+			Node* curr=head;
+
+			for(int i=1;i<=(k-1);i++)
+			curr=curr->next;
+
+			Node* nodeToBeDeleted=curr->next;
+			curr->next=nodeToBeDeleted->next;
+			delete nodeToBeDeleted;
+
+		}
+
+}
+
 
 int main()
 {
@@ -251,25 +282,28 @@ int main()
 	insertionAtTail(head,tail,20); // 10->20->NULL
 	insertionAtTail(head,tail,30); // 10->20->30->NULL
 
-	display(head);
-	cout<<"\n";
+	// display(head);
+	// cout<<"\n";
 
 	insertionAtKthPosition(head,tail,100,1);
-
+	
 	display(head);
-
-	deleteAtHead(head,tail);
 	cout<<"\n";
+	deleteAtKthPosition(head,tail,2);
 	display(head);
 
-	deleteAtHead(head,tail);
-	cout<<"\n";
-	display(head);
+	// deleteAtHead(head,tail);
+	// cout<<"\n";
+	// display(head);
+
+	// deleteAtHead(head,tail);
+	// cout<<"\n";
+	// display(head);
 
 
-	deleteAtTail(head,tail);
-	cout<<"\n";
-	display(head);
+	// deleteAtTail(head,tail);
+	// cout<<"\n";
+	// display(head);
 
 
 	
