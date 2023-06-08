@@ -335,7 +335,7 @@ void reverseLLRecursive(Node* &head,Node* &tail)
 }
 
 
-Node* getKthNodeFromLast(Node head,int k)
+Node* getKthNodeFromLast(Node* head,int k)
 {
 
 	Node* slow=head;
@@ -343,6 +343,18 @@ Node* getKthNodeFromLast(Node head,int k)
 
 
 	// Move fast exactly k steps forward
+
+	for(int i=1;i<=k;i++)
+	fast=fast->next;
+
+	
+	while(fast!=NULL)
+	{
+		slow=slow->next;
+		fast=fast->next;
+	}
+
+	return slow;
 
 
 	// Move fast and slow one-one step ahead simultaneously 
@@ -388,12 +400,16 @@ int main()
 	display(head);
 
 
-	cout<<endl;
+	// cout<<endl;
 
-	// reverseLL(head,tail);
+	// // reverseLL(head,tail);
 
-	reverseLLRecursive(head,tail);
-	display(head);
+	// reverseLLRecursive(head,tail);
+	// display(head);
+
+	Node* kthFromLast=getKthNodeFromLast(head,2);
+
+	cout<<endl<<kthFromLast->data;
 
 	// cout<<endl<<getKthNode(head,2);
 
