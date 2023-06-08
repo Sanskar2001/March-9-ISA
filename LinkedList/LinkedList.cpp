@@ -262,13 +262,42 @@ void deleteAtKthPosition(Node* &head,Node* &tail,int k)
 }
 
 
-int getKthNode(Node* head)
+int getKthNode(Node* head,int k)
 {
 	// Take k jumps
 
+	for(int i=1;i<=k;i++)
+	head=head->next;
+
+	
+	return head->data;
 	// return the value of the kth node
 }
 
+
+void reverseLL(Node* &head,Node* &tail)
+{
+		if(head==NULL)
+		return;
+
+	Node* curr=head;
+	Node* prev=NULL;
+
+	while(curr!=NULL)
+	{
+		Node* save=curr->next;
+		curr->next=prev;
+		prev=curr;
+		curr=save;
+	}
+
+	tail=head;
+	head=prev;
+
+
+
+
+}
 
 int main()
 {
@@ -300,6 +329,14 @@ int main()
 	deleteAtKthPosition(head,tail,2);
 	display(head);
 
+
+	cout<<endl;
+
+	reverseLL(head,tail);
+	display(head);
+
+	// cout<<endl<<getKthNode(head,2);
+
 	// deleteAtHead(head,tail);
 	// cout<<"\n";
 	// display(head);
@@ -312,6 +349,8 @@ int main()
 	// deleteAtTail(head,tail);
 	// cout<<"\n";
 	// display(head);
+
+
 
 
 	
