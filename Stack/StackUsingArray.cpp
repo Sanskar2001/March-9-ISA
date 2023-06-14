@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 // blue print for my stack
@@ -66,6 +67,7 @@ class Stack
 int main()
 {
 
+	// int x=5;
 	Stack st(3); // object of class stack 
 	// this can be used as a real stack now
 
