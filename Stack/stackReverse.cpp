@@ -13,6 +13,60 @@ void reverseStack(stack<int>&st)
 	//then st=tmpSt;
 
 
+	while(!st.empty())
+	{
+
+		int topEle=st.top();
+		st.pop();
+		tmpSt.push(topEle);
+	}
+
+
+	st=tmpSt;
+
+}
+
+
+
+void insertAtBottom(stack<int>&st,int ele)
+{
+
+	if(st.empty())
+	{
+		st.push(ele);
+		return;
+	}
+
+	int topEle=st.top();
+	st.pop();
+	insertAtBottom(st,ele);
+	st.push(topEle);
+
+
+
+}
+
+
+void reverseStackRecursive(stack<int>&st)
+{
+
+	if(st.empty())
+	{
+		return;
+	}
+
+
+	// pop the top ele from stack
+	int topEle=st.top();
+	st.pop();
+
+	// reverse the remaining stack
+	reverseStackRecursive(st);
+	// insert this top ele that was poped earlier
+	// at bottom
+	insertAtBottom(st,topEle);
+
+
 
 
 }
@@ -22,7 +76,7 @@ void display(stack<int>st)
 {
 	while(!st.empty())
 	{
-		cout<<st.top();
+		cout<<st.top()<<endl;
 		st.pop();
 	}
 }
@@ -38,8 +92,10 @@ int main()
 	display(st);
 	cout<<"\n";
 
-	reverseStack(st);
-	
+	// reverseStack(st);
+
+	reverseStackRecursive(st);
+
 	cout<<"\nAfter Reversal:\n";
 	display(st);
 
