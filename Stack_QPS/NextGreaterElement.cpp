@@ -4,7 +4,7 @@ using namespace std;
 
 void nextGreater(int* arr,int* ans,int n)
 {
-
+	// Brute Force Approach
 	// O(n2)
 	for(int i=0;i<n;i++)
 	{
@@ -35,7 +35,7 @@ void nextGreaterUsingStack(int* arr,int* ans,int n)
 
 	stack<int>st;
 
-	// O(n)
+	// Optmisied solution using Stack, Time Complexity= O(n)
 
 	// Traverse the given array from right to left
 
