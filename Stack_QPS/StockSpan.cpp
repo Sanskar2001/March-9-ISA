@@ -11,7 +11,7 @@ void stockSpan(int* prices,int n)
 	{
 		// Traversing days from 0 to n-1
 
-		while(!st.empty() && prices[i]>prices[st.top()])
+		while(!st.empty() && prices[i]>=prices[st.top()])
 		{
 			st.pop();
 		}
