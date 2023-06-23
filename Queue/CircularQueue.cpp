@@ -3,14 +3,14 @@ using namespace std;
 
 class CircularQueue
 {
-		public:
+	
 	int* arr;
 	int front;
 	int rear;
 	int size;
 	int capacity;
 
-
+	public:
 	CircularQueue(int cap)
 	{
 		arr=new int[cap];
