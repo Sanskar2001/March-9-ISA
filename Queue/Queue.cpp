@@ -75,14 +75,17 @@ class Queue
 
 int main()
 {
-	Queue q1(4);
+
+	int size;
+	cin>>size;
+	Queue q1(size);
 
 	q1.enQueue(10);
 	q1.enQueue(20);
 	q1.enQueue(30);
 	q1.enQueue(40);
+
 	// q1.enQueue(50);
-
 	// cout<<q1.getFront()<<endl;
 	// q1.deQueue();
 	// cout<<q1.getFront()<<endl;
@@ -90,7 +93,6 @@ int main()
 	// cout<<q1.getFront()<<endl;
 	// q1.deQueue();
 	// cout<<q1.getFront()<<endl;
-
 	// q1.deQueue();
 
 	while(!q1.empty())
