@@ -61,6 +61,58 @@ void postOrder(node* root)
 	cout<<root->data<<" ";
 }
 
+
+node* search(node* root,int target)
+{
+	if(root==NULL)
+		return NULL;
+
+	if(root->data==target)
+		return root;
+
+	// make calls in left and right subtrees
+
+	node* leftAns=search(root->left,target);
+
+	if(leftAns!=NULL)
+	return leftAns;
+
+	node* rightAns=search(root->right,target);
+	if(rightAns!=NULL)
+	return rightAns;
+
+
+	return NULL;
+	
+
+}
+
+ int height(node* root)
+ {
+ 	if(root==NULL)
+ 		return 0;
+
+ 	int leftHieght=height(root->left); // hieght of left subtree
+ 	int rightHieght=height(root->right); // hieght of right subtree
+
+
+ 	return max(leftHieght,rightHieght)+1;
+
+ }
+
+ int countNode(node* root)
+ {
+ 	if(root==NULL)
+ 		return 0;
+
+ 	int leftCnt=countNode(root->left); // cnt of left subtree
+ 	int rightCnt=countNode(root->right); // cnt of right subtree
+
+ 	return leftCnt+rightCnt+1;
+
+ 	// return countNode(root->left)+countNode(root->right)+1;
+ }
+
 int main()
 {
 	// node* root=new node(100);
@@ -70,9 +122,20 @@ int main()
 
 	node* root=buildTree();
 
-	preOrder(root);
-	cout<<"\n";
-	inOrder(root);
-	cout<<"\n";
-	postOrder(root);
+	// node* desiredNode=search(root,3);
+	// // cout<<desiredNode->data<<endl;
+
+	// if(desiredNode==NULL)
+	// 	cout<<"Not found!!";
+	// else
+	// cout<<"It is found";
+
+	// preOrder(root);
+	// cout<<"\n";
+	// inOrder(root);
+	// cout<<"\n";
+	// postOrder(root);
+
+	cout<<"Hieght of tree="<<height(root)<<endl;
+	cout<<"Total no of nodes="<<countNode(root)<<endl;
 }
