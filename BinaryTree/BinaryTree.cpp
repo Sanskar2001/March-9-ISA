@@ -31,6 +31,36 @@ class node
 
 }
 
+void preOrder(node* root)
+{
+	if(root==NULL)
+		return;
+
+	cout<<root->data <<" ";
+	preOrder(root->left);
+	preOrder(root->right);
+}
+void inOrder(node* root)
+{
+	if(root==NULL)
+		return;
+
+	inOrder(root->left);
+	cout<<root->data<<" ";
+	inOrder(root->right);
+}
+
+void postOrder(node* root)
+{
+	if(root==NULL)
+		return;
+
+
+	postOrder(root->left);
+	postOrder(root->right);
+	cout<<root->data<<" ";
+}
+
 int main()
 {
 	// node* root=new node(100);
@@ -40,4 +70,9 @@ int main()
 
 	node* root=buildTree();
 
+	preOrder(root);
+	cout<<"\n";
+	inOrder(root);
+	cout<<"\n";
+	postOrder(root);
 }
