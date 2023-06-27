@@ -14,7 +14,7 @@ class node
 	}
 };
 
-node* buildTree()
+ node* buildTree()
 {
 
 	int d;
@@ -26,12 +26,18 @@ node* buildTree()
 	node* root=new node(d);
 	root->left=buildTree();
 	root->right=buildTree();
+
+	return root;
+
 }
 
 int main()
 {
-	node* root=new node(100);
-	cout<<root->data<<endl;
-	cout<<root->left<<endl;
-	cout<<root->right<<endl;
+	// node* root=new node(100);
+	// cout<<root->data<<endl;
+	// cout<<root->left<<endl;
+	// cout<<root->right<<endl;
+
+	node* root=buildTree();
+
 }
