@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 class node
 {
@@ -143,15 +144,100 @@ void preOrder(node* root)
 }
 
 
+void printAtKthLevel(node* root,int k)
+{
+	if(root==NULL)
+		return;
+
+	if(k==1)
+	{
+		cout<<root->data<<" ";
+		return;
+	}
+
+
+	printAtKthLevel(root->left,k-1);
+	printAtKthLevel(root->right,k-1);
+
+
+}
+
+void bfs(node* root)
+{
+
+	queue<node*>q;
+	q.push(root);
+
+	while(!q.empty())
+	{
+
+		node* curr=q.front();
+		cout<<curr->data<<" ";
+
+		if(curr->left!=NULL)
+		q.push(curr->left);
+
+		if(curr->right!=NULL)
+		q.push(curr->right);
+
+
+		q.pop();
+	}
+
+}
+
+
+void bfsPrintInNewLine(node* root)
+{
+
+
+	queue<node*>q;
+	q.push(root);
+	q.push(NULL);
+
+
+
+	while(!q.empty())
+	{
+
+		node* curr=q.front();
+		q.pop();
+
+		if(curr==NULL)
+		{
+			cout<<endl;
+
+			if(!q.empty())
+			q.push(NULL);
+
+		}
+
+		else
+		{
+
+			cout<<curr->data<<" ";
+
+			if(curr->left!=NULL)
+				q.push(curr->left);
+
+			if(curr->right!=NULL)
+				q.push(curr->right);
+		}
+	}
+
+}
+
+
+
 int main()
 {
 
 	
 	node* root=buildTree();
 
-	invert(root);
+	// invert(root);
 
-	preOrder(root);
+	// preOrder(root);
 
 
 	// Pair ans=diameterOptimised(root);
@@ -160,5 +246,32 @@ int main()
 	// cout<<"height="<<ans.height<<endl;
 
 
+	// printAtKthLevel(root,1);
+	// cout<<endl;
+	// printAtKthLevel(root,2);
+	// cout<<endl;
+	// printAtKthLevel(root,3);
+	// cout<<endl;
+
+    /*
+
+	int ht=height(root);
+
+	// Levels-> 1 ..... ht
+
+	// Level Order Traversal
+
+	//DFS--> O(n2)
+	for(int i=1;i<=ht;i++)
+	{
+		printAtKthLevel(root,i);
+		cout<<endl;
+	}
+
+	*/
+
+
+	// bfs(root);
+	bfsPrintInNewLine(root);
 
 }
