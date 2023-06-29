@@ -107,7 +107,40 @@ class Pair
    }
 
 
+void invert(node* root)
+{
 
+	if(root==NULL)
+		return;
+
+
+	// Make 2 recursive calls
+	// Invert left BTree
+	// Invert right BTree
+	//Exchange left and right subtrees
+	// RETURN ROOT
+
+	invert(root->left);
+	invert(root->right);
+
+	node* tmp=root->left;
+	root->left=root->right;
+	root->right=tmp;
+
+	// swap(root->left,root->right);
+
+}
+
+void preOrder(node* root)
+{
+	if(root==NULL)
+		return;
+
+	cout<<root->data<<" ";
+	preOrder(root->left);
+	preOrder(root->right);
+
+}
 
 
 int main()
@@ -116,11 +149,15 @@ int main()
 	
 	node* root=buildTree();
 
+	invert(root);
 
-	Pair ans=diameterOptimised(root);
+	preOrder(root);
 
-	cout<<"diameter="<<ans.diameter<<endl;
-	cout<<"height="<<ans.height<<endl;
+
+	// Pair ans=diameterOptimised(root);
+
+	// cout<<"diameter="<<ans.diameter<<endl;
+	// cout<<"height="<<ans.height<<endl;
 
 
 
